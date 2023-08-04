@@ -70,7 +70,12 @@ a:hover {
 .sidebar-head {
     display: flex;
     justify-content: center;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
+}
+
+.sidebar h2 {
+  color: rgba(0, 0, 0, 0.748);
+  font-size: 1.8em;
 }
 
 .project {
@@ -100,6 +105,70 @@ a:hover {
     text-align: center;
 }
 
+.new {
+  text-align: center;
+}
+
 #new-project-btn:hover{
     background-color: rgba(128, 128, 128, 0.085);
+}
+
+.display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.display-container {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  height: 95%;
+}
+
+.display-header {
+  display: flex;
+  align-items: end;
+  padding-left: 50px;
+  height: 70px;
+  width: auto;
+  border-bottom: 2px solid black;
+}
+
+.display-header h2 {
+  font-size: 1.8em;
+}
+
+
+.tasks {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  width: auto;
+  border: 1px solid black;
+  border-radius: 2px;
+  margin: 15px 35px 15px 35px;
+  padding: 0px 15px 0px 15px
+}
+
+.left , .right {
+  display: flex;
+  align-items: center;
+}
+
+
+.tasks:hover {
+  background-color: rgba(128, 128, 128, 0.085);
+}
+
+.tick {
+  font-size: 18px;
+  margin-right: 10px;
+  color: rgba(32,96,126,1);
+}
+
+.options {
+  color: rgba(32,96,126,1);
+  margin: 0px 5px 0px 0px;
 }
