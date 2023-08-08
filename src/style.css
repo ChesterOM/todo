@@ -34,6 +34,14 @@ a:hover {
     }
   }
 
+  h1,
+  h2,
+  h3,
+  p,
+  i {
+    cursor: default;
+  }
+
 #content-body {
     display: grid;
     grid-template-columns: 1fr 4fr;
@@ -174,4 +182,109 @@ a:hover {
 .options {
   color: rgba(32,96,126,1);
   margin: 0px 5px 0px 0px;
+}
+
+.bg-modal {
+  /* display: none; to disable and display:flex; to enable */
+  display: none; 
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.68);
+  position: absolute;
+  top: 0;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  background-color: #effbfc;
+  width: 420px;
+  height: 550px;
+  border-radius: 5px;
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  color: #effbfc;
+  font-size: 17px;
+  padding-left: 20px;
+  height: 70px;
+  background: linear-gradient(130deg, rgba(32,96,126,1) 0%, rgba(62,176,210,1) 100%);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  position: relative;
+  cursor: default;
+}
+
+.close {
+  position: absolute;
+  top: -5px;
+  right: 10px;
+  font-size: 36px;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+
+form {
+  max-width: 500px;
+  margin: 10px 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  margin-left: 3px;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.746);
+}
+
+input, 
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+textarea {
+  height: 100px;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px; 
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(58, 179, 216);
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+button[type="submit"]:hover {
+  background-color: rgba(32,96,126,1);
 }

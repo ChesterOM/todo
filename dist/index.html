@@ -74,9 +74,39 @@
                 </div>
             </div>
         </div>
-
-
-
     </div>
+
+    <div class="bg-modal">
+
+        <div class="modal-content">
+      
+          <div class="banner">
+            <h2>Create Task</h2>
+            <div class="close">+</div>
+          </div>
+      
+          <form>
+            <label>Task:</label>
+            <input type="text" maxlength="50">
+      
+            <label>Description:</label>
+            <textarea maxlength="250"></textarea>
+
+            <label>Date/Time:</label>  
+            <input type="datetime-local">
+      
+            <label>Importance:</label>
+            <select>
+              <option value="regular">Regular</option>
+              <option value="urgent">Urgent</option>
+            </select>
+
+            <button type="submit">Add Task</button>
+
+          </form>
+      
+        </div>
+      
+      </div>
 </body>
 </html>
