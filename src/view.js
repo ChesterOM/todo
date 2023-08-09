@@ -5,7 +5,7 @@ import { Task, Project, ProjectList, TaskList, projectList, taskList } from './a
     const projectContainer = document.querySelector(".project-container");
     const taskContainer = document.querySelector(".display-contents");
     const close = document.querySelectorAll('.close');
-
+    const allTasksBtn = document.querySelector('.all-tasks');
 
 //remember to invoke these on index.js
 const addProjectButton = () => {
@@ -35,9 +35,10 @@ const renderProjects = () => {
     });
 };
 
-const renderTasks = (project) => {
+const renderTasks = (input) => {
     taskContainer.innerHTML = "";
-    project.tasks.forEach(task => {
+    const tasksArray = Array.isArray(input) ? input : input.tasks;
+    tasksArray.forEach(task => {
         
         const taskDiv = document.createElement("div");
         taskDiv.classList.add('tasks');
@@ -83,6 +84,10 @@ const renderTasks = (project) => {
     })
 };
 
+const renderAllTasks = () => {
+    allTasksBtn.addEventListener('click', () => renderTasks(taskList.tasks));
+}
+
 
 const addProjectForm = () => {
     projectModal.setAttribute('style', 'display: flex');
@@ -110,4 +115,4 @@ const closeTaskForm = () => {
     });
 }
 
-export { closeProjectForm, closeTaskForm, projectModal,taskModal, addProjectButton, addTaskButton, addProjectForm, addTaskForm, renderProjects, renderTasks };  
+export { renderAllTasks, closeProjectForm, closeTaskForm, projectModal,taskModal, addProjectButton, addTaskButton, addProjectForm, addTaskForm, renderProjects, renderTasks };  
