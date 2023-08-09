@@ -78,11 +78,11 @@ class TaskList {
 const projectList = new ProjectList();
 const taskList = new TaskList();
 
-const defaultProject = new Project("Default Project");
-projectList.addProject(defaultProject);
+/* const defaultProject = new Project("Default Project");
+projectList.addProject(defaultProject); */
 
-const testTask = new Task("Test Task", "This is a test task", new Date(), "low");
+/* const testTask = new Task("Test Task", "This is a test task", new Date(), "low");
 defaultProject.addTask(testTask);
-taskList.addTask(testTask);
+taskList.addTask(testTask); */
 
-export { Task, Project, ProjectList, TaskList, projectList, taskList, defaultProject, testTask };
+export { Task, Project, ProjectList, TaskList, projectList, taskList };

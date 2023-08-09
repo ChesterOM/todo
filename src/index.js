@@ -1,4 +1,6 @@
-import { Task, Project, ProjectList, TaskList, projectList, taskList, defaultProject, testTask } from './app.js';
+import { Task, Project, ProjectList, TaskList, projectList, taskList } from './app.js';
+import { closeProjectForm, closeTaskForm, taskModal, projectModal, addProjectButton, addTaskButton, addProjectForm, addTaskForm, renderProjects, renderTasks } from './view.js'
+
 
 (() => {
     
@@ -36,10 +38,11 @@ import { Task, Project, ProjectList, TaskList, projectList, taskList, defaultPro
 
 
 
+    addTaskButton()
+    addProjectButton()
 
-
-
-
+    renderProjects()
+   /*  renderTasks()  */  
 
 
 

@@ -1,4 +1,4 @@
-import { Task, Project, ProjectList, TaskList, projectList, taskList, defaultProject, testTask } from './app.js';
+import { Task, Project, ProjectList, TaskList, projectList, taskList } from './app.js';
 
 
 const setEventListeners = () => {

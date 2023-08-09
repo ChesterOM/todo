@@ -184,7 +184,19 @@ a:hover {
   margin: 0px 5px 0px 0px;
 }
 
-.bg-modal {
+.task-modal {
+  /* display: none; to disable and display:flex; to enable */
+  display: none; 
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.68);
+  position: absolute;
+  top: 0;
+}
+
+.project-modal {
   /* display: none; to disable and display:flex; to enable */
   display: none; 
   justify-content: center;
@@ -203,6 +215,10 @@ a:hover {
   width: 420px;
   height: 550px;
   border-radius: 5px;
+}
+
+.size-edit {
+  height: 250px;
 }
 
 .banner {

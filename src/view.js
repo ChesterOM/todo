@@ -1,8 +1,11 @@
-import { Task, Project, ProjectList, TaskList, projectList, taskList, defaultProject, testTask } from './app.js';
+import { Task, Project, ProjectList, TaskList, projectList, taskList } from './app.js';
 
+    const taskModal = document.querySelector('.task-modal');
+    const projectModal = document.querySelector('.project-modal');
+    const projectContainer = document.querySelector(".project-container");
+    const taskContainer = document.querySelector(".display-contents");
+    const close = document.querySelectorAll('.close');
 
-const projectContainer = document.querySelector(".project-container");
-const taskContainer = document.querySelector(".display-contents");
 
 //remember to invoke these on index.js
 const addProjectButton = () => {
@@ -16,9 +19,9 @@ const addTaskButton = () => {
  }
 
 
-const renderProjects = (projectsArray) => {
+const renderProjects = () => {
     projectContainer.innerHTML = "";
-    projectsArray.forEach(project => {
+    projectList.projects.forEach(project => {
        
         const projectElement = document.createElement('div');
         projectElement.textContent = project.title;
@@ -82,9 +85,29 @@ const renderTasks = (project) => {
 
 
 const addProjectForm = () => {
-
+    projectModal.setAttribute('style', 'display: flex');
+    closeProjectForm()
 };
 
 const addTaskForm = () => {
-
+    taskModal.setAttribute('style', 'display: flex');
+    closeTaskForm()
 };
+
+const closeProjectForm = () => {
+    close.forEach(closeBtn => {
+        closeBtn.addEventListener('click', ()=> {
+            projectModal.setAttribute('style', 'display: none');
+        });
+    });
+}
+
+const closeTaskForm = () => {
+    close.forEach(closeBtn => {
+        closeBtn.addEventListener('click', () => {
+            taskModal.setAttribute('style', 'display: none');
+        });
+    });
+}
+
+export { closeProjectForm, closeTaskForm, projectModal,taskModal, addProjectButton, addTaskButton, addProjectForm, addTaskForm, renderProjects, renderTasks };  
