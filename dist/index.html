@@ -24,11 +24,9 @@
             <div class="sidebar-head"><h2>Projects</h2></div>
 
             <div class="project all-tasks">All Tasks</div>
-            <div class="project-container">
-                <div class="project">Project 1</div>
-                <div class="project">Project 2</div>
-                <div class="project">Project 3</div>
-            </div>
+            
+            <div class="project-container"></div>
+
                 <div id="create-new-project">
                     <button id="new-project-btn" class="material-icon-button">New Project <i class="material-icons new">add_circle_outline</i></button>
                  </div>
@@ -38,43 +36,11 @@
             <div class="display-container">
                 <div class="display-header">
                     <h2>Tasks</h2>
-                    <div><i id="add-task-btn" class="material-icons new">add_circle_outline</i></div>
+                    <div id="style-add-btn"><i id="add-task-btn" class="material-icons new">add_circle_outline</i></div>
                 </div>
-                <div class="display-contents">
 
-                        <div class="tasks">
-                            <div class="left">
-                                <i class="material-icons tick">radio_button_unchecked</i> 
-                                <p>This is your task that you need to complete</p> </div> 
-                            <div class="right"> 
-                                <i class="material-icons options">delete</i> 
-                                <i class="material-icons options">edit</i>
-                                <i class="material-icons options">info</i> 
-                            </div>
-                        </div>    
-                        <div class="tasks">
-                            <div class="left">
-                                <i class="material-icons tick">radio_button_unchecked</i> 
-                                <p>This is your task that you need to complete</p> </div> 
-                            <div class="right"> 
-                                <i class="material-icons options">delete</i> 
-                                <i class="material-icons options">edit</i>
-                                <i class="material-icons options">info</i> 
-                            </div>
-                        </div>     
-                        <div class="tasks">
-                            <div class="left">
-                                <i class="material-icons tick">radio_button_unchecked</i> 
-                                <p>This is your task that you need to complete</p> </div> 
-                            <div class="right"> 
-                                <i class="material-icons options">delete</i> 
-                                <i class="material-icons options">edit</i>
-                                <i class="material-icons options">info</i> 
-                            </div>
-                        </div>
+                <div class="display-contents"></div>
 
-
-                </div>
             </div>
         </div>
     </div>
@@ -90,16 +56,16 @@
       
           <form>
             <label>Task:</label>
-            <input type="text" maxlength="50">
+            <input type="text" maxlength="50" id="task-title-input">
       
             <label>Description:</label>
-            <textarea maxlength="250"></textarea>
+            <textarea maxlength="250" id="task-description-input"></textarea>
 
             <label>Date/Time:</label>  
-            <input type="datetime-local">
+            <input type="datetime-local" id="task-time-input">
       
             <label>Importance:</label>
-            <select>
+            <select id="task-priority-input">
               <option value="regular">Regular</option>
               <option value="urgent">Urgent</option>
             </select>

@@ -1,5 +1,6 @@
 let taskIdCounter = 0;
 let projectIdCounter = 0;
+let currentProject = null
 
 class Task {
     constructor(title, description, dueDate, priority) {
@@ -75,6 +76,16 @@ class TaskList {
     }
 }
 
+function setCurrentProject(project) {
+    currentProject = project;
+};
+
+function getCurrentProject() {
+    return currentProject;
+};
+
+
+
 const projectList = new ProjectList();
 const taskList = new TaskList();
 
@@ -85,4 +96,4 @@ projectList.addProject(defaultProject); */
 defaultProject.addTask(testTask);
 taskList.addTask(testTask); */
 
-export { Task, Project, ProjectList, TaskList, projectList, taskList };
+export { Task, Project, ProjectList, TaskList, projectList, taskList, setCurrentProject, getCurrentProject, currentProject};

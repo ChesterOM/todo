@@ -1,4 +1,4 @@
-import { Task, Project, ProjectList, TaskList, projectList, taskList } from './app.js';
+import { Task, Project, ProjectList, TaskList, projectList, taskList, currentProject, setCurrentProject, getCurrentProject } from './app.js';
 
     const taskModal = document.querySelector('.task-modal');
     const projectModal = document.querySelector('.project-modal');
@@ -6,6 +6,7 @@ import { Task, Project, ProjectList, TaskList, projectList, taskList } from './a
     const taskContainer = document.querySelector(".display-contents");
     const close = document.querySelectorAll('.close');
     const allTasksBtn = document.querySelector('.all-tasks');
+    const addTaskBtn = document.getElementById("add-task-btn");
 
 //remember to invoke these on index.js
 const addProjectButton = () => {
@@ -28,6 +29,7 @@ const renderProjects = () => {
         projectElement.classList.add('project');
 
         projectElement.addEventListener('click', () => {
+            setCurrentProject(project);
             renderTasks(project);
         });
 
@@ -82,10 +84,21 @@ const renderTasks = (input) => {
         taskContainer.appendChild(taskDiv);
 
     })
+
+    if (getCurrentProject()) {
+        addTaskBtn.style.display = 'flex'; 
+    } else {
+        addTaskBtn.style.display = 'none';
+    }
 };
 
+
 const renderAllTasks = () => {
-    allTasksBtn.addEventListener('click', () => renderTasks(taskList.tasks));
+    allTasksBtn.addEventListener('click', () => {
+        setCurrentProject(null);
+        renderTasks(taskList.tasks);
+        addTaskBtn.style.display = 'none';
+    });
 }
 
 
