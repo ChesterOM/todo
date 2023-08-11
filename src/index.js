@@ -1,9 +1,10 @@
 import { Task, Project, ProjectList, TaskList, projectList, taskList, currentProject, setCurrentProject, getCurrentProject } from './app.js';
 import { renderAllTasks, closeProjectForm, closeTaskForm, taskModal, projectModal, addProjectButton, addTaskButton, addProjectForm, addTaskForm, renderProjects, renderTasks } from './view.js'
-
+import { submitTaskForm, submitProjectForm } from './controller.js'
 
 (() => {
     
+
     
     const task1 = new Task("Task 1", "First task", new Date(), "high");
     const task2 = new Task("Task 2", "Second task", new Date(), "medium");
@@ -47,7 +48,9 @@ import { renderAllTasks, closeProjectForm, closeTaskForm, taskModal, projectModa
     renderAllTasks()
 
 
+    const taskSubmit = document.getElementById('task-submit');
+    taskSubmit.addEventListener('click', submitTaskForm);
 
-
-    
+    const projectSubmit = document.getElementById('project-submit');
+    projectSubmit.addEventListener('click', submitProjectForm);
 })();

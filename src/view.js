@@ -1,4 +1,6 @@
 import { Task, Project, ProjectList, TaskList, projectList, taskList, currentProject, setCurrentProject, getCurrentProject } from './app.js';
+import { submitTaskForm, submitProjectForm } from './controller.js'
+
 
     const taskModal = document.querySelector('.task-modal');
     const projectModal = document.querySelector('.project-modal');
@@ -7,8 +9,9 @@ import { Task, Project, ProjectList, TaskList, projectList, taskList, currentPro
     const close = document.querySelectorAll('.close');
     const allTasksBtn = document.querySelector('.all-tasks');
     const addTaskBtn = document.getElementById("add-task-btn");
+    const projectForm = document.querySelector('.project-modal form');
+    const taskForm = document.querySelector('.task-modal form');
 
-//remember to invoke these on index.js
 const addProjectButton = () => {
    const btn = document.getElementById("new-project-btn");
    btn.addEventListener("click", addProjectForm);
@@ -105,11 +108,13 @@ const renderAllTasks = () => {
 const addProjectForm = () => {
     projectModal.setAttribute('style', 'display: flex');
     closeProjectForm()
+    submitProjectForm
 };
 
 const addTaskForm = () => {
     taskModal.setAttribute('style', 'display: flex');
     closeTaskForm()
+    submitTaskForm
 };
 
 const closeProjectForm = () => {
@@ -118,7 +123,7 @@ const closeProjectForm = () => {
             projectModal.setAttribute('style', 'display: none');
         });
     });
-}
+};
 
 const closeTaskForm = () => {
     close.forEach(closeBtn => {
@@ -126,6 +131,10 @@ const closeTaskForm = () => {
             taskModal.setAttribute('style', 'display: none');
         });
     });
-}
+};
 
-export { renderAllTasks, closeProjectForm, closeTaskForm, projectModal,taskModal, addProjectButton, addTaskButton, addProjectForm, addTaskForm, renderProjects, renderTasks };  
+
+
+
+
+export { renderAllTasks, closeProjectForm, closeTaskForm, projectModal,taskModal, taskForm, projectForm, addProjectButton, addTaskButton, addProjectForm, addTaskForm, renderProjects, renderTasks };  
