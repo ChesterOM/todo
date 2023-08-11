@@ -185,6 +185,16 @@ a:hover {
   margin: 0px 5px 0px 0px;
 }
 
+.options:hover {
+  transition: 0.3s;
+  transform: scale(1.13);
+  color: rgb(18, 82, 111);
+}
+
+.options:active {
+  color: rgba(18, 81, 111, 0.62);
+}
+
 .task-modal {
   /* display: none; to disable and display:flex; to enable */
   display: none; 
@@ -316,3 +326,4 @@ button {
 button:hover {
   background-color: rgba(32,96,126,1);
 }
+

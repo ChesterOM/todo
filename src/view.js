@@ -67,6 +67,7 @@ const renderTasks = (input) => {
 
         const deleteIcon = document.createElement('i');
         deleteIcon.classList.add('material-icons', 'options');
+        deleteIcon.id = 'delete';
         deleteIcon.textContent = 'delete';
 
         const editIcon = document.createElement('i');
@@ -85,8 +86,9 @@ const renderTasks = (input) => {
         taskDiv.appendChild(rightDiv);
 
         taskContainer.appendChild(taskDiv);
+        attachDeleteTaskEvent(task.id, taskDiv);
 
-    })
+    });
 
     if (getCurrentProject()) {
         addTaskBtn.style.display = 'flex'; 
@@ -133,6 +135,20 @@ const closeTaskForm = () => {
     });
 };
 
+function attachDeleteTaskEvent(taskId, taskDiv) {
+    const deleteBtn = taskDiv.querySelector('#delete');
+    deleteBtn.addEventListener('click', function() {
+        
+        taskList.deleteTask(taskId);
+
+        const current = getCurrentProject();
+        if (current) {
+            current.removeTask(taskId);
+        }
+
+        renderTasks(current ? current : taskList.tasks);
+    });
+};
 
 
 
