@@ -1,9 +1,21 @@
 import { Task, Project, ProjectList, TaskList, projectList, taskList, getCurrentProject } from './app.js';
-import { renderAllTasks, closeProjectForm, closeTaskForm, taskModal, projectModal,taskForm, projectForm, addProjectButton, addTaskButton, addProjectForm, addTaskForm, renderProjects, renderTasks } from './view.js'
+import { renderAllTasks, closeProjectForm, closeTaskForm, updateTask, taskModal, projectModal,taskForm, projectForm, addProjectButton, addTaskButton, addProjectForm, addTaskForm, renderProjects, renderTasks } from './view.js'
 
 
+let isEditMode = false;
+let taskToEdit = null;
 
+function setIsEditMode(mode) {
+    isEditMode = mode;
+}
 
+function setTaskToEdit(task) {
+    taskToEdit = task;
+}
+
+function toggleEditMode() {
+    isEditMode = !isEditMode;
+}
 
 function createNewTask() {
     
@@ -45,9 +57,13 @@ function createNewProject() {
 };
 
 const submitTaskForm = () => {
-        createNewTask()
-        taskModal.setAttribute('style', 'display: none'); 
-        taskForm.reset()
+    if (isEditMode) {
+        updateTask();
+    } else {
+        createNewTask();
+    }
+    taskModal.setAttribute('style', 'display: none'); 
+    taskForm.reset();
 };
 
 const submitProjectForm = () => {
@@ -56,4 +72,4 @@ const submitProjectForm = () => {
         projectForm.reset() 
 };
 
-export { submitTaskForm, submitProjectForm }
+export { submitTaskForm, submitProjectForm, setIsEditMode, setTaskToEdit, isEditMode, taskToEdit, toggleEditMode }

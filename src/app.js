@@ -13,12 +13,20 @@ class Task {
     };
     
     markComplete() {
-        this.completed = true;
+        this.completed = !this.completed;
     };
 
     updatePriority(newPriority){
         this.priority = newPriority;
     };
+
+    updateTaskInfo(newTitle, newDescription, newDueDate, newPriority){
+        this.title = newTitle;
+        this.description = newDescription;
+        this.dueDate = newDueDate;
+        this.priority = newPriority;
+    }
+
 };
 
 class Project {
