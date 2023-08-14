@@ -2,6 +2,7 @@ import { Task, Project, ProjectList, TaskList, projectList, taskList, currentPro
 import { renderAllTasks, closeProjectForm, closeTaskForm, taskModal, projectModal, addProjectButton, addTaskButton, addProjectForm, addTaskForm, renderProjects, renderTasks } from './view.js'
 import { submitTaskForm, submitProjectForm } from './controller.js'
 import { loadData } from './storage.js'
+import './style.css'
 
 (() => {
     loadData(); 
