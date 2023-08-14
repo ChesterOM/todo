@@ -162,13 +162,13 @@ const renderAllTasks = () => {
 const addProjectForm = () => {
     projectModal.setAttribute('style', 'display: flex');
     closeProjectForm()
-    submitProjectForm
+    /* submitProjectForm() */
 };
 
 const addTaskForm = () => {
     taskModal.setAttribute('style', 'display: flex');
     closeTaskForm()
-    submitTaskForm
+   /*  submitTaskForm() */
 };
 
 const addInfoForm = () => {

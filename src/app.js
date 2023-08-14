@@ -1,3 +1,5 @@
+import { saveData, loadData } from './storage'
+
 let taskIdCounter = 0;
 let projectIdCounter = 0;
 let currentProject = null
@@ -14,10 +16,12 @@ class Task {
     
     markComplete() {
         this.completed = !this.completed;
+        saveData()
     };
 
     updatePriority(newPriority){
         this.priority = newPriority;
+        saveData()
     };
 
     updateTaskInfo(newTitle, newDescription, newDueDate, newPriority){
@@ -25,8 +29,12 @@ class Task {
         this.description = newDescription;
         this.dueDate = newDueDate;
         this.priority = newPriority;
+        saveData()
     }
-
+    
+    static setIdCounter(id) {
+        taskIdCounter = id;
+    }
 };
 
 class Project {
@@ -38,11 +46,16 @@ class Project {
 
     addTask(task) {
         this.tasks.push(task);
+        saveData()
     };
 
     removeTask(taskId) {
         this.tasks = this.tasks.filter(task => task.id !== taskId);
+        saveData()
     };
+    static setIdCounter(id) {
+        projectIdCounter = id;
+    }
 }
 
 class ProjectList {
@@ -52,10 +65,12 @@ class ProjectList {
     
     addProject(project) {
         this.projects.push(project);
+        saveData()
     };
 
     deleteProject(projectId) {
         this.projects = this.projects.filter(project => project.id !== projectId);
+        saveData()
     };
 
     getProject(projectId) {
@@ -70,10 +85,12 @@ class TaskList {
 
     addTask(task){
         this.tasks.push(task);
+        saveData()
     }
 
     deleteTask(taskId) {
         this.tasks = this.tasks.filter(task => task.id !== taskId);
+        saveData()
     }
 
     markTaskComplete(taskId) {
@@ -81,6 +98,7 @@ class TaskList {
         if (task) {
             task.markComplete();
         }
+        saveData()
     }
 }
 
