@@ -5,15 +5,10 @@ import { loadData } from './storage.js'
 
 (() => {
     loadData(); 
-
-
-
     addTaskButton()
     addProjectButton()
-
     renderProjects()
     renderTasks(taskList.tasks)
-    
     renderAllTasks()
 
 

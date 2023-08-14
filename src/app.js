@@ -31,7 +31,13 @@ class Task {
         this.priority = newPriority;
         saveData()
     }
-    
+
+    static fromData(data) {
+        let task = new Task(data.title, data.description, data.dueDate, data.priority, data.id);
+        task.completed = data.completed;
+        return task;
+    }
+
     static setIdCounter(id) {
         taskIdCounter = id;
     }

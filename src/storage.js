@@ -1,5 +1,4 @@
-import { Task, Project } from './app'
-
+import { Task, Project } from './app';
 import { projectList, taskList } from "./app";
 
 function saveData() {
@@ -23,12 +22,7 @@ function loadData() {
     }
 
     if (loadedTaskList && loadedTaskList.tasks) {
-        taskList.tasks = loadedTaskList.tasks.map(taskData => {
-            const task = new Task(taskData.title, taskData.description, new Date(taskData.dueDate), taskData.priority);
-            task.id = taskData.id; 
-            task.completed = taskData.completed; 
-            return task;
-        });
+        taskList.tasks = loadedTaskList.tasks.map(taskData => Task.fromData(taskData));
 
         if (taskList.tasks.length) {
             const maxTaskId = Math.max(...taskList.tasks.map(t => t.id));
